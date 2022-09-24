@@ -19,5 +19,5 @@ add-type $code
 }
 
 $wpFolder = 'wallpapers'
-$wallpaperToApply = Get-ChildItem $wpFolder | Get-Random | ForEach-Object {$_.FullName}
+$wallpaperToApply = Get-ChildItem $wpFolder -Exclude .gitignore | Get-Random | ForEach-Object {$_.FullName}
 Set-Wallpaper($wallpaperToApply)
